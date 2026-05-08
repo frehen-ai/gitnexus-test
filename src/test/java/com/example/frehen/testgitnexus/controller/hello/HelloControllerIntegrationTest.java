@@ -23,7 +23,7 @@ class HelloControllerIntegrationTest {
         mockMvc.perform(post("/hello")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {"name": "Bob", "message": "how are you"}
+                                {"user": "Bob", "message": "how are you"}
                                 """))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.message").value("Hello Bob, how are you"));
